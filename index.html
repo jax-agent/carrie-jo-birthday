@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday, Carrie Jo</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:radial-gradient(ellipse at 50% 30%,#2b3a55 0%,#141c2c 70%);font-family:Georgia,"Times New Roman",serif;color:#2c2118;}
+#stage{width:360px;height:480px;perspective:1800px;position:relative;scale:1}
+@media(max-width:800px){#stage{scale:.8}}
+@media(max-width:640px){#stage{scale:.62}}
+@media(max-width:480px){#stage{scale:.46}}
+#book{position:relative;width:360px;height:480px;transform-style:preserve-3d;animation:slide 1.6s 1.2s cubic-bezier(.5,0,.2,1) forwards}
+@keyframes slide{to{transform:translateX(180px)}}
+.page{position:absolute;inset:0;border-radius:4px 10px 10px 4px;background:#fffaf0;box-shadow:0 20px 50px #0008}
+.right{padding:34px 30px;display:flex;flex-direction:column;justify-content:center}
+.right h2{font-family:"Snell Roundhand","Brush Script MT","Lucida Handwriting",cursive;font-size:34px;font-weight:400;margin:0 0 14px;color:#8a5a1c}
+.right p{font-size:16px;line-height:1.55;margin:0 0 12px;opacity:0;transform:translateY(8px);animation:rise .8s forwards}
+.right p:nth-of-type(1){animation-delay:3.2s}.right p:nth-of-type(2){animation-delay:4.0s}.right p:nth-of-type(3){animation-delay:4.8s}
+.sig{font-family:"Snell Roundhand","Brush Script MT","Lucida Handwriting",cursive;font-size:28px;color:#8a5a1c;margin-top:6px;opacity:0;animation:rise .8s 5.6s forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.cover{position:absolute;inset:0;transform-origin:left center;transform-style:preserve-3d;animation:flip 1.6s 1.2s cubic-bezier(.5,0,.2,1) forwards}
+@keyframes flip{to{transform:rotateY(-180deg)}}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:4px 10px 10px 4px;overflow:hidden}
+.front{background:linear-gradient(160deg,#1d4f5c,#102a38);box-shadow:0 20px 50px #0008}
+.back{transform:rotateY(180deg);background:#fffaf0;border-radius:10px 4px 4px 10px}
+.tw{animation:tw 2.4s infinite}.tw:nth-child(2n){animation-delay:.8s}.tw:nth-child(3n){animation-delay:1.5s}
+@keyframes tw{50%{opacity:.15}}
+.blk{opacity:0;transform:translateY(-120px);animation:drop .55s cubic-bezier(.3,1.4,.5,1) forwards}
+@keyframes drop{to{opacity:1;transform:none}}
+.heart{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .6s 8.2s forwards,beat 1.2s 8.8s infinite}
+@keyframes pop{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+@keyframes beat{50%{transform:scale(1.2)}}
+.paw{opacity:0;animation:fade .5s forwards}
+@keyframes fade{to{opacity:.35}}
+.tail{transform-origin:right center;transform-box:fill-box;animation:wag .5s infinite alternate}
+@keyframes wag{from{transform:rotate(-14deg)}to{transform:rotate(14deg)}}
+.cf{position:fixed;top:-20px;width:9px;height:14px;opacity:0;animation:fall 4s linear forwards;pointer-events:none}
+@keyframes fall{0%{opacity:1;transform:translateY(0) rotate(0)}100%{opacity:1;transform:translateY(110vh) rotate(720deg)}}
+.cardsec{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cue{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:#e8c26a;font-style:italic;letter-spacing:1px;opacity:0;animation:cue 1s 7s forwards}
+@keyframes cue{to{opacity:.9}}
+.tix{background:#efe4cf;padding:44px 14px 70px;overflow-x:hidden}
+.tix .wrap{max-width:660px;margin:0 auto}
+.tix h2.t{margin:0 0 4px;text-align:center;font-size:clamp(24px,6vw,38px);color:#0f4c52;font-family:Georgia,'Times New Roman',serif}
+.tix .sub{text-align:center;font-style:italic;color:#7a4e10;margin:0 0 26px;font-family:Georgia,serif}
+.tix .letter-note{text-align:center;font-family:Georgia,serif;font-size:17px;line-height:1.5;color:#2b2118;margin:0 0 26px}
+.tix .fan,.tix .hint,.tix .foot{font-family:Georgia,serif}
+.fan{position:relative;width:100%;max-width:500px;height:430px;margin:0 auto;padding-top:0}
+.ticket{position:absolute;right:0;bottom:0;width:100%;height:176px;display:flex;background:#fbf6e9;border:1.5px solid #1c3a52;border-radius:10px;overflow:hidden;font-family:'Courier New',Courier,monospace;color:#1c3a52;box-shadow:-2px 3px 8px rgba(30,40,60,.3);transform-origin:right bottom;transform:rotate(var(--r));z-index:var(--z);outline:none;cursor:pointer;-webkit-tap-highlight-color:transparent;animation:fan 1s cubic-bezier(.2,.8,.25,1) 6s backwards}
+.ticket:focus,.ticket:focus-within{transform:rotate(0deg);z-index:50;box-shadow:0 6px 16px rgba(30,40,60,.4);animation:none;transition:transform .3s ease}
+.main{flex:1;min-width:0;padding:0 14px 10px;border-right:2px dashed #1c3a52;background:repeating-linear-gradient(0deg,transparent 0 23px,rgba(28,58,82,.04) 23px 24px)}
+.band{display:flex;justify-content:space-between;gap:8px;margin:0 -14px 6px;padding:8px 14px;background:#1c3a52;color:#f2d98c;font-size:12px;letter-spacing:1px;font-weight:bold;white-space:nowrap}
+.band .nm{text-transform:uppercase;overflow:hidden;text-overflow:ellipsis}
+.cls{font-size:10px;letter-spacing:2px;color:#9a2a2a;font-weight:bold;margin-bottom:3px}
+.pax{font-size:11px;letter-spacing:1px}
+.pax small,.stub small{font-size:9px;letter-spacing:2px;color:#8a6a2a}
+.desc{font-family:Georgia,serif;font-style:italic;font-size:13px;margin:6px 0;color:#3b2a1a;line-height:1.3}
+.meta{display:flex;gap:16px;font-size:11px;font-weight:bold;border-top:1px solid #c9b88c;padding-top:5px}
+.stub{width:112px;flex:none;padding:10px 6px;text-align:center;display:flex;flex-direction:column;justify-content:space-between;align-items:center;background:#f4ecd6}
+.stub b{font-size:14px;letter-spacing:1px}
+.bars{width:84px;height:30px;background:repeating-linear-gradient(90deg,#1c3a52 0 2px,transparent 2px 4px,#1c3a52 4px 5px,transparent 5px 8px,#1c3a52 8px 11px,transparent 11px 13px)}
+.stub a{font-size:9px;letter-spacing:1px;font-weight:bold;color:#fff;background:#9a2a2a;text-decoration:none;padding:5px 6px;border-radius:3px;white-space:nowrap}
+.hint{text-align:center;font-size:13px;font-style:italic;color:#7a4e10;margin:14px 0 0}
+.foot{text-align:center;margin-top:22px;font-size:18px;color:#0f4c52}
+.foot small{display:block;margin-top:6px;font-size:13px;color:#7a4e10;font-style:italic}
+@keyframes in{to{opacity:1}}
+@keyframes fan{from{transform:rotate(0deg)}}
+@media(max-width:520px){.fan{height:360px}.ticket{height:172px}.stub{width:92px}.bars{width:68px}.pax{display:none}.band{font-size:11px}.meta{gap:10px;font-size:10px}.desc{font-size:12px}}
+</style></head><body>
+<section class="cardsec">
+<div id="stage"><div id="book">
+  <div class="page right">
+    <h2>Dear Carrie Jo,</h2>
+    <p>Happy birthday! You spend your days caring for animals, your weekends building things, and somehow you still have time for Riley and Vanessa. I am so proud of you.</p>
+    <p>Thank you for being the very first person to try Antmachine, and for every bug you sent me along the way.</p>
+    <p>I hope today is full of good food, big laughs and all three of your favorite people.</p>
+    <div class="sig">Love, Sterling</div>
+  </div>
+  <div class="cover">
+    <div class="face front">
+      <svg viewBox="0 0 360 480" width="360" height="480">
+        <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#f3d98b"/><stop offset=".5" stop-color="#e8c26a"/><stop offset="1" stop-color="#b98a2e"/></linearGradient></defs>
+        <rect x="14" y="14" width="332" height="452" rx="6" fill="none" stroke="url(#g)" stroke-width="2"/>
+        <rect x="22" y="22" width="316" height="436" rx="4" fill="none" stroke="url(#g)" stroke-width=".8"/>
+        <g fill="url(#g)"><circle class="tw" cx="60" cy="70" r="2"/><circle class="tw" cx="300" cy="60" r="2.5"/><circle class="tw" cx="320" cy="150" r="1.6"/><circle class="tw" cx="40" cy="170" r="1.8"/><circle class="tw" cx="180" cy="48" r="1.6"/></g>
+        <text x="180" y="105" text-anchor="middle" font-family="'Snell Roundhand','Brush Script MT','Lucida Handwriting',cursive" font-size="54" fill="url(#g)">Happy</text>
+        <text x="180" y="158" text-anchor="middle" font-family="'Snell Roundhand','Brush Script MT','Lucida Handwriting',cursive" font-size="54" fill="url(#g)">Birthday</text>
+        <text x="180" y="196" text-anchor="middle" font-family="Georgia,serif" font-size="15" letter-spacing="7" fill="#e8c26a">CARRIE JO</text>
+        <g stroke="#0d2430" stroke-width="2">
+          <rect x="70" y="372" width="62" height="50" fill="#e8c26a"/><rect x="132" y="372" width="62" height="50" fill="#c9923b"/>
+          <rect x="194" y="372" width="62" height="50" fill="#e8c26a"/><rect x="256" y="372" width="40" height="50" fill="#c9923b"/>
+          <rect x="101" y="322" width="62" height="50" fill="#c9923b"/><rect x="163" y="322" width="62" height="50" fill="#e8c26a"/>
+        </g>
+        <g transform="translate(115,262)">
+          <ellipse cx="-30" cy="6" rx="14" ry="26" fill="#a9733b" transform="rotate(14 -30 6)"/>
+          <ellipse cx="30" cy="6" rx="14" ry="26" fill="#a9733b" transform="rotate(-14 30 6)"/>
+          <circle cx="0" cy="10" r="34" fill="#d9a366"/>
+          <ellipse cx="0" cy="24" rx="17" ry="13" fill="#f3dcb8"/>
+          <circle cx="-12" cy="4" r="4.5" fill="#1b1b1b"/><circle cx="12" cy="4" r="4.5" fill="#1b1b1b"/>
+          <ellipse cx="0" cy="17" rx="6" ry="4.5" fill="#1b1b1b"/>
+        </g>
+        <g transform="translate(228,268)">
+          <polygon points="-30,-14 -22,-46 -6,-24" fill="#8c8f98"/><polygon points="30,-14 22,-46 6,-24" fill="#8c8f98"/>
+          <circle cx="0" cy="8" r="30" fill="#aeb2bb"/>
+          <ellipse cx="-11" cy="2" rx="4.5" ry="5.5" fill="#e8c26a"/><ellipse cx="11" cy="2" rx="4.5" ry="5.5" fill="#e8c26a"/>
+          <ellipse cx="-11" cy="2" rx="1.6" ry="5" fill="#111"/><ellipse cx="11" cy="2" rx="1.6" ry="5" fill="#111"/>
+          <polygon points="-3,13 3,13 0,17" fill="#e58aa0"/>
+          <g stroke="#555" stroke-width="1"><line x1="-8" y1="18" x2="-34" y2="14"/><line x1="-8" y1="21" x2="-34" y2="22"/><line x1="8" y1="18" x2="34" y2="14"/><line x1="8" y1="21" x2="34" y2="22"/></g>
+        </g>
+        <path class="tail" d="M70 300 q-26 -6 -22 -34" stroke="#a9733b" stroke-width="9" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+    <div class="face back">
+      <svg viewBox="0 0 360 480" width="360" height="480">
+        <text x="180" y="60" text-anchor="middle" font-family="'Snell Roundhand','Brush Script MT','Lucida Handwriting',cursive" font-size="30" fill="#8a5a1c">Another year of building</text>
+        <rect x="20" y="394" width="320" height="10" rx="5" fill="#d9c7a1"/>
+        <g stroke="#6b4a1e" stroke-width="1.5">
+<rect class="blk" style="animation-delay:3.0s" x="90" y="344" width="60" height="50" fill="#e8b878"/><rect class="blk" style="animation-delay:3.4s" x="150" y="344" width="60" height="50" fill="#d9a05c"/><rect class="blk" style="animation-delay:3.8s" x="210" y="344" width="60" height="50" fill="#e8b878"/><rect class="blk" style="animation-delay:4.2s" x="105" y="294" width="60" height="50" fill="#d9a05c"/><rect class="blk" style="animation-delay:4.6s" x="165" y="294" width="60" height="50" fill="#e8b878"/><rect class="blk" style="animation-delay:5.0s" x="225" y="294" width="45" height="50" fill="#d9a05c"/><rect class="blk" style="animation-delay:5.4s" x="135" y="244" width="60" height="50" fill="#e8b878"/><rect class="blk" style="animation-delay:5.8s" x="195" y="244" width="60" height="50" fill="#d9a05c"/><rect class="blk" style="animation-delay:6.4s" x="172" y="352" width="26" height="42" fill="#7a4a2a"/><rect class="blk" style="animation-delay:6.6s" x="112" y="302" width="22" height="22" fill="#a8d5ee"/><polygon class="blk" style="animation-delay:7.4s" points="120,244 195,180 270,244" fill="#b5523a"/></g><path class="heart" d="M195 160 c-8-12 -26-4 -18 10 c4 7 18 16 18 16 s14-9 18-16 c8-14 -10-22 -18-10z" fill="#d8566b"/><g fill="#8a5a1c"><g class="paw" style="animation-delay:8.8s" transform="translate(50,440) rotate(0)"><ellipse cx="0" cy="4" rx="7" ry="5.5"/><circle cx="-7" cy="-4" r="2.6"/><circle cx="-2.5" cy="-8" r="2.6"/><circle cx="2.5" cy="-8" r="2.6"/><circle cx="7" cy="-4" r="2.6"/></g><g class="paw" style="animation-delay:9.2s" transform="translate(90,426) rotate(10)"><ellipse cx="0" cy="4" rx="7" ry="5.5"/><circle cx="-7" cy="-4" r="2.6"/><circle cx="-2.5" cy="-8" r="2.6"/><circle cx="2.5" cy="-8" r="2.6"/><circle cx="7" cy="-4" r="2.6"/></g><g class="paw" style="animation-delay:9.6s" transform="translate(130,440) rotate(0)"><ellipse cx="0" cy="4" rx="7" ry="5.5"/><circle cx="-7" cy="-4" r="2.6"/><circle cx="-2.5" cy="-8" r="2.6"/><circle cx="2.5" cy="-8" r="2.6"/><circle cx="7" cy="-4" r="2.6"/></g></g></svg></div></div></div></div><i class="cf" style="left:0%;background:#e8c26a;animation-delay:2.4s;animation-duration:3.0s"></i><i class="cf" style="left:37%;background:#d8566b;animation-delay:3.7s;animation-duration:3.7s"></i><i class="cf" style="left:74%;background:#5bb3a6;animation-delay:5.0s;animation-duration:4.4s"></i><i class="cf" style="left:11%;background:#f3e9d2;animation-delay:3.3s;animation-duration:5.1s"></i><i class="cf" style="left:48%;background:#6aa5e8;animation-delay:4.6s;animation-duration:3.3s"></i><i class="cf" style="left:85%;background:#e8c26a;animation-delay:2.9s;animation-duration:4.0s"></i><i class="cf" style="left:22%;background:#d8566b;animation-delay:4.2s;animation-duration:4.7s"></i><i class="cf" style="left:59%;background:#5bb3a6;animation-delay:2.5s;animation-duration:5.4s"></i><i class="cf" style="left:96%;background:#f3e9d2;animation-delay:3.8s;animation-duration:3.6s"></i><i class="cf" style="left:33%;background:#6aa5e8;animation-delay:5.1s;animation-duration:4.3s"></i><i class="cf" style="left:70%;background:#e8c26a;animation-delay:3.4s;animation-duration:5.0s"></i><i class="cf" style="left:7%;background:#d8566b;animation-delay:4.7s;animation-duration:3.2s"></i><i class="cf" style="left:44%;background:#5bb3a6;animation-delay:3.0s;animation-duration:3.9s"></i><i class="cf" style="left:81%;background:#f3e9d2;animation-delay:4.3s;animation-duration:4.6s"></i><i class="cf" style="left:18%;background:#6aa5e8;animation-delay:2.6s;animation-duration:5.3s"></i><i class="cf" style="left:55%;background:#e8c26a;animation-delay:3.9s;animation-duration:3.5s"></i><i class="cf" style="left:92%;background:#d8566b;animation-delay:5.2s;animation-duration:4.2s"></i><i class="cf" style="left:29%;background:#5bb3a6;animation-delay:3.5s;animation-duration:4.9s"></i><i class="cf" style="left:66%;background:#f3e9d2;animation-delay:4.8s;animation-duration:3.1s"></i><i class="cf" style="left:3%;background:#6aa5e8;animation-delay:3.1s;animation-duration:3.8s"></i><i class="cf" style="left:40%;background:#e8c26a;animation-delay:4.4s;animation-duration:4.5s"></i><i class="cf" style="left:77%;background:#d8566b;animation-delay:2.7s;animation-duration:5.2s"></i><i class="cf" style="left:14%;background:#5bb3a6;animation-delay:4.0s;animation-duration:3.4s"></i><i class="cf" style="left:51%;background:#f3e9d2;animation-delay:5.3s;animation-duration:4.1s"></i><i class="cf" style="left:88%;background:#6aa5e8;animation-delay:3.6s;animation-duration:4.8s"></i><i class="cf" style="left:25%;background:#e8c26a;animation-delay:4.9s;animation-duration:3.0s"></i><i class="cf" style="left:62%;background:#d8566b;animation-delay:3.2s;animation-duration:3.7s"></i><i class="cf" style="left:99%;background:#5bb3a6;animation-delay:4.5s;animation-duration:4.4s"></i><i class="cf" style="left:36%;background:#f3e9d2;animation-delay:2.8s;animation-duration:5.1s"></i><i class="cf" style="left:73%;background:#6aa5e8;animation-delay:4.1s;animation-duration:3.3s"></i><i class="cf" style="left:10%;background:#e8c26a;animation-delay:2.4s;animation-duration:4.0s"></i><i class="cf" style="left:47%;background:#d8566b;animation-delay:3.7s;animation-duration:4.7s"></i><i class="cf" style="left:84%;background:#5bb3a6;animation-delay:5.0s;animation-duration:5.4s"></i><i class="cf" style="left:21%;background:#f3e9d2;animation-delay:3.3s;animation-duration:3.6s"></i><i class="cf" style="left:58%;background:#6aa5e8;animation-delay:4.6s;animation-duration:4.3s"></i><i class="cf" style="left:95%;background:#e8c26a;animation-delay:2.9s;animation-duration:5.0s"></i><i class="cf" style="left:32%;background:#d8566b;animation-delay:4.2s;animation-duration:3.2s"></i><i class="cf" style="left:69%;background:#5bb3a6;animation-delay:2.5s;animation-duration:3.9s"></i><i class="cf" style="left:6%;background:#f3e9d2;animation-delay:3.8s;animation-duration:4.6s"></i><i class="cf" style="left:43%;background:#6aa5e8;animation-delay:5.1s;animation-duration:5.3s"></i><div class="cue">scroll down for your tickets &#8595;</div>
+</section>
+<section class="tix"><div class="wrap">
+<h2 class="t">Six tickets, just for you</h2>
+<p class="sub">Each one is good any day you choose, and none of them expire.</p>
+<div class="fan">
+<div class="ticket" tabindex="0" style="--r:0deg;--z:9">
+  <div class="main">
+    <div class="band"><span class="nm">Build Day</span><span>No. 001</span></div>
+    <div class="cls">BIRTHDAY &middot; FIRST CLASS</div>
+    <div class="pax"><small>FOR</small> CARRIE JO COBB &nbsp;&middot;&nbsp; <small>FROM</small> STERLING</div>
+    <p class="desc">Pick any project. We plan it and get it finished together on a video call.</p>
+    <div class="meta"><span>VALID: ANY DAY</span><span>FARE: FREE</span></div>
+  </div>
+  <div class="stub">
+    <small>CARRIE JO</small><b>BLD-1</b>
+    <div class="bars"></div>
+    <a href="mailto:sterlingcobb@gmail.com?subject=Ticket%201%3A%20Build%20Day&body=Hi%20Sterling%2C%20I%27d%20like%20to%20use%20ticket%201.%20Here%27s%20when%20works%20for%20me%3A%20">USE THIS TICKET</a>
+  </div>
+</div>
+
+<div class="ticket" tabindex="0" style="--r:6deg;--z:8">
+  <div class="main">
+    <div class="band"><span class="nm">Chief Assistant for a Day</span><span>No. 002</span></div>
+    <div class="cls">BIRTHDAY &middot; FIRST CLASS</div>
+    <div class="pax"><small>FOR</small> CARRIE JO COBB &nbsp;&middot;&nbsp; <small>FROM</small> STERLING</div>
+    <p class="desc">I'll take care of being your assistant for the day. Your inbox, errands and lookups, handled.</p>
+    <div class="meta"><span>VALID: ANY DAY</span><span>FARE: FREE</span></div>
+  </div>
+  <div class="stub">
+    <small>CARRIE JO</small><b>CAD-2</b>
+    <div class="bars"></div>
+    <a href="mailto:sterlingcobb@gmail.com?subject=Ticket%202%3A%20Chief%20Assistant%20for%20a%20Day&body=Hi%20Sterling%2C%20I%27d%20like%20to%20use%20ticket%202.%20Here%27s%20when%20works%20for%20me%3A%20">USE THIS TICKET</a>
+  </div>
+</div>
+
+<div class="ticket" tabindex="0" style="--r:12deg;--z:7">
+  <div class="main">
+    <div class="band"><span class="nm">One Thing Off Your List</span><span>No. 003</span></div>
+    <div class="cls">BIRTHDAY &middot; FIRST CLASS</div>
+    <div class="pax"><small>FOR</small> CARRIE JO COBB &nbsp;&middot;&nbsp; <small>FROM</small> STERLING</div>
+    <p class="desc">Hand me any task you've been putting off, and I'll get it done.</p>
+    <div class="meta"><span>VALID: ANY DAY</span><span>FARE: FREE</span></div>
+  </div>
+  <div class="stub">
+    <small>CARRIE JO</small><b>ONE-3</b>
+    <div class="bars"></div>
+    <a href="mailto:sterlingcobb@gmail.com?subject=Ticket%203%3A%20One%20Thing%20Off%20Your%20List&body=Hi%20Sterling%2C%20I%27d%20like%20to%20use%20ticket%203.%20Here%27s%20when%20works%20for%20me%3A%20">USE THIS TICKET</a>
+  </div>
+</div>
+
+<div class="ticket" tabindex="0" style="--r:18deg;--z:6">
+  <div class="main">
+    <div class="band"><span class="nm">Your Animal Portrait</span><span>No. 004</span></div>
+    <div class="cls">BIRTHDAY &middot; FIRST CLASS</div>
+    <div class="pax"><small>FOR</small> CARRIE JO COBB &nbsp;&middot;&nbsp; <small>FROM</small> STERLING</div>
+    <p class="desc">A custom portrait of you, Riley, Vanessa and your animals.</p>
+    <div class="meta"><span>VALID: ANY DAY</span><span>FARE: FREE</span></div>
+  </div>
+  <div class="stub">
+    <small>CARRIE JO</small><b>PRT-4</b>
+    <div class="bars"></div>
+    <a href="mailto:sterlingcobb@gmail.com?subject=Ticket%204%3A%20Your%20Animal%20Portrait&body=Hi%20Sterling%2C%20I%27d%20like%20to%20use%20ticket%204.%20Here%27s%20when%20works%20for%20me%3A%20">USE THIS TICKET</a>
+  </div>
+</div>
+
+<div class="ticket" tabindex="0" style="--r:24deg;--z:5">
+  <div class="main">
+    <div class="band"><span class="nm">A Call, Just For You</span><span>No. 005</span></div>
+    <div class="cls">BIRTHDAY &middot; FIRST CLASS</div>
+    <div class="pax"><small>FOR</small> CARRIE JO COBB &nbsp;&middot;&nbsp; <small>FROM</small> STERLING</div>
+    <p class="desc">One hour of catching up. You pick the topic.</p>
+    <div class="meta"><span>VALID: ANY DAY</span><span>FARE: FREE</span></div>
+  </div>
+  <div class="stub">
+    <small>CARRIE JO</small><b>CAL-5</b>
+    <div class="bars"></div>
+    <a href="mailto:sterlingcobb@gmail.com?subject=Ticket%205%3A%20A%20Call%2C%20Just%20For%20You&body=Hi%20Sterling%2C%20I%27d%20like%20to%20use%20ticket%205.%20Here%27s%20when%20works%20for%20me%3A%20">USE THIS TICKET</a>
+  </div>
+</div>
+
+<div class="ticket" tabindex="0" style="--r:30deg;--z:4">
+  <div class="main">
+    <div class="band"><span class="nm">Deal Check</span><span>No. 006</span></div>
+    <div class="cls">BIRTHDAY &middot; FIRST CLASS</div>
+    <div class="pax"><small>FOR</small> CARRIE JO COBB &nbsp;&middot;&nbsp; <small>FROM</small> STERLING</div>
+    <p class="desc">Send me any listing or deal. I'll come back with the numbers and my honest take.</p>
+    <div class="meta"><span>VALID: ANY DAY</span><span>FARE: FREE</span></div>
+  </div>
+  <div class="stub">
+    <small>CARRIE JO</small><b>DLC-6</b>
+    <div class="bars"></div>
+    <a href="mailto:sterlingcobb@gmail.com?subject=Ticket%206%3A%20Deal%20Check&body=Hi%20Sterling%2C%20I%27d%20like%20to%20use%20ticket%206.%20Here%27s%20when%20works%20for%20me%3A%20">USE THIS TICKET</a>
+  </div>
+</div>
+</div>
+<div class="hint">Tap a ticket to bring it to the front.</div>
+<div class="foot">Love, Sterling<small>To use a ticket, press USE THIS TICKET and send the email.</small></div>
+</div></section>
+</body>
+</html>
